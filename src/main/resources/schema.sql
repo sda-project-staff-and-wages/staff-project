@@ -1,3 +1,9 @@
+SET FOREIGN_KEY_CHECKS = 0;
+drop table if exists department;
+drop table if exists employee;
+drop table if exists users;
+SET FOREIGN_KEY_CHECKS = 1;
+
 CREATE TABLE department (
 	id bigint(20) NOT NULL AUTO_INCREMENT,
 	name varchar(50) NOT NULL,
