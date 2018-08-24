@@ -2,7 +2,7 @@ CREATE TABLE group(
 	id bigint(20) NOT NULL AUTO_INCREMENT,
 	name varchar(50) NOT NULL,
   code_name varchar(5) NOT NULL,
-  PRIMARY KEY(id)
+  PRIMARY KEY(id),
 )ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 CREATE TABLE employee (
@@ -15,7 +15,8 @@ CREATE TABLE employee (
   working_hours_hourly bigint(20) NOT NULL,
   salary bigint(20) NOT NULL,
   hire_data date(20) NOT NULL,
-  PRIMARY KEY(id)
+  PRIMARY KEY(id),
+  FOREIGN KEY(group_id) REFERENCES group(id)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 CREATE TABLE user(
