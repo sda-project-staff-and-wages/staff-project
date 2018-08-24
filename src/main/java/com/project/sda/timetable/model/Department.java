@@ -5,7 +5,7 @@ import javax.persistence.*;
 
 @Getter
 @Setter
-@AllArgsConstructor(access = AccessLevel.PRIVATE)
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 @RequiredArgsConstructor
 @EqualsAndHashCode
 @Entity

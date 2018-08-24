@@ -5,7 +5,7 @@ import javax.persistence.*;
 
 @Getter
 @Setter
-@NoArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 @RequiredArgsConstructor
 @EqualsAndHashCode
 @Entity
@@ -29,5 +29,8 @@ public class Users {
     @Column(name = "password")
     @NonNull
     private String password;
+
+    @Column(name = "email")
+    private String email;
 
 }
