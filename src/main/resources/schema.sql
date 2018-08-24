@@ -25,5 +25,6 @@ CREATE TABLE user(
   login varchar(50) NOT NULL,
   password varchar(50) NOT NULL DATALENGHT(password) >=8,
   email varchar(80) NOT NULL,
-  PRIMARY KEY(id)
+  PRIMARY KEY(id),
+  FOREIGN KEY(employee_id) REFERENCES employee(id)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
