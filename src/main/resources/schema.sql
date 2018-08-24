@@ -22,8 +22,7 @@ CREATE TABLE user(
   id bigint(20) NOT NULL AUTO_INCREMENT,
   employee_id bigint(20),
   login varchar(50) NOT NULL,
-  password varchar(50) NOT NULL,
-  DATALENGHT(password) >=8,
+  password varchar(50) NOT NULL DATALENGHT(password) >=8,
   email varchar(80) NOT NULL,
   PRIMARY KEY(id)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
