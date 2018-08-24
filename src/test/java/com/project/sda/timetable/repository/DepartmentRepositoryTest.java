@@ -44,7 +44,7 @@ public class DepartmentRepositoryTest {
     }
 
     @Test
-    public void shouldGetClientByCodeName() {
+    public void shouldGetDepartmentByCodeName() {
         //given
         String codeName = "cn1";
         Department department = getDepartment1();
@@ -58,7 +58,7 @@ public class DepartmentRepositoryTest {
     }
 
     @Test
-    public void shouldGetAllClients() {
+    public void shouldGetAllDepartments() {
         //given
         Department department1 = getDepartment1();
         Department department2 = getDepartment2();
@@ -72,7 +72,7 @@ public class DepartmentRepositoryTest {
     }
 
     @Test
-    public void shouldAddClient() {
+    public void shouldAddDepartment() {
         //given
         Department department = getDepartment3();
 
@@ -86,21 +86,21 @@ public class DepartmentRepositoryTest {
     }
 
     @Test
-    public void shouldUpdateClient() {
+    public void shouldUpdateDepartment() {
         //given
         Department department = getDepartment1();
         department.setCodeName("cnupd");
         department.setName("name-update");
 
         //when
-        Department testClient = departmentRepository.save(department);
+        Department testDepartment = departmentRepository.save(department);
 
         //then
-        assertThat(testClient, equalTo(department));
+        assertThat(testDepartment, equalTo(department));
     }
 
     @Test
-    public void shouldDeleteClient() {
+    public void shouldDeleteDepartment() {
         //given
         Long id = 1L;
 
@@ -108,7 +108,7 @@ public class DepartmentRepositoryTest {
         departmentRepository.deleteById(id);
 
         //then
-        Optional<Department> testClient = departmentRepository.findById(id);
-        assertThat(testClient.isPresent(), is(false));
+        Optional<Department> testDepartment = departmentRepository.findById(id);
+        assertThat(testDepartment.isPresent(), is(false));
     }
 }
