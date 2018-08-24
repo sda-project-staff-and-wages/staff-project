@@ -10,11 +10,11 @@ CREATE TABLE employee (
   department_id bigint(20) NOT NULL,
   name varchar(30) NOT NULL,
   surname varchar(80) NOT NULL,
-  agrement_type varchar(30) NOT NULL,
-  working_hours_percent bigint(20) NOT NULL,
-  working_hours_hourly bigint(20) NOT NULL,
-  salary bigint(20) NOT NULL,
-  hire_data date NOT NULL,
+  agreement_type varchar(30) NOT NULL,
+  working_hours_percent integer NOT NULL,
+  working_hours_hourly integer NOT NULL,
+  salary decimal NOT NULL,
+  hire_date date NOT NULL,
   PRIMARY KEY(id),
   FOREIGN KEY(department_id) REFERENCES department(id)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;

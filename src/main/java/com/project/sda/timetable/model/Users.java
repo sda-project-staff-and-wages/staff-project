@@ -9,9 +9,9 @@ import javax.persistence.*;
 @RequiredArgsConstructor
 @EqualsAndHashCode
 @Entity
-@Table(name = "user")
+@Table(name = "users")
 
-public class User {
+public class Users {
 
     @Id
     @Column(name = "id")

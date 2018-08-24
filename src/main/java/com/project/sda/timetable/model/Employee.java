@@ -31,6 +31,7 @@ public class Employee {
     @NonNull
     private String surname;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "agreement_type")
     private AgreementType agreementType;
 
