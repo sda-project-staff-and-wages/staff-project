@@ -20,8 +20,8 @@ public class Employee {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "group_id")
-    private Group group;
+    @JoinColumn(name = "department_id")
+    private Department department;
 
     @Column(name = "name")
     @NonNull
@@ -31,6 +31,7 @@ public class Employee {
     @NonNull
     private String surname;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "agreement_type")
     private AgreementType agreementType;
 
