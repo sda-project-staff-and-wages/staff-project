@@ -7,7 +7,7 @@ import java.time.LocalDate;
 
 @Getter
 @Setter
-@AllArgsConstructor(access = AccessLevel.PRIVATE)
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 @RequiredArgsConstructor
 @EqualsAndHashCode
 @Entity
@@ -22,6 +22,10 @@ public class Employee {
     @ManyToOne
     @JoinColumn(name = "department_id")
     private Department department;
+
+    @Column(name = "code_name")
+    @NonNull
+    Long company_id;
 
     @Column(name = "name")
     @NonNull

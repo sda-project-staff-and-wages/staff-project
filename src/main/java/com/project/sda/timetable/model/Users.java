@@ -5,18 +5,23 @@ import javax.persistence.*;
 
 @Getter
 @Setter
-@NoArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 @RequiredArgsConstructor
 @EqualsAndHashCode
 @Entity
-@Table(name = "user")
+@Table(name = "users")
 
-public class User {
+public class Users {
 
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name = "code_name")
+    @NonNull
+    @ManyToMany
+    Long company_id;
 
     @OneToOne
     @JoinColumn(name = "employee_id")
@@ -29,5 +34,8 @@ public class User {
     @Column(name = "password")
     @NonNull
     private String password;
+
+    @Column(name = "email")
+    private String email;
 
 }
