@@ -17,7 +17,7 @@ public class Department {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
-    @Column(name = "code_name")
+    @Column(name = "company_id")
     @NonNull
     Long company_id;
 
