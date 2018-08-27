@@ -18,6 +18,11 @@ public class Users {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "company_id")
+    @NonNull
+    @ManyToMany
+    Long company_id;
+
     @OneToOne
     @JoinColumn(name = "employee_id")
     private Employee employee;
