@@ -68,7 +68,7 @@ public class DepartmentRepositoryTest {
 
         //then
         assertThat(testDepartments, hasSize(2));
-        assertThat(testDepartments, hasItems(department1, department1));
+        assertThat(testDepartments, hasItems(department1, department2));
     }
 
     @Test
