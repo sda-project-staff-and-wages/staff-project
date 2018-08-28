@@ -1,35 +1,36 @@
 package com.project.sda.timetable.repository;
 
-import com.project.sda.timetable.model.AgreementType;
-import com.project.sda.timetable.model.Department;
-import com.project.sda.timetable.model.Employee;
-import com.project.sda.timetable.model.Users;
+import com.project.sda.timetable.model.*;
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
 class DefaultDataTest {
 
     static Department getDepartment1() {
-        Department DEPARTMENT1 = new Department("cn1","name1");
-        DEPARTMENT1.setId(1L);
+        Companys companys = new Companys(1L, "name1", "trade1", "adress1", "nip1");
+
+        Department DEPARTMENT1 = new Department(1L, companys, "cn1", "name1");
         return DEPARTMENT1;
     }
 
     static Department getDepartment2() {
-        Department DEPARTMENT2 = new Department("cn2","name2");
-        DEPARTMENT2.setId(2L);
+        Companys companys = new Companys(1L, "name1", "trade1", "adress1", "nip1");
+
+        Department DEPARTMENT2 = new Department(1L, companys, "cn2", "name2");
         return DEPARTMENT2;
     }
 
     static Department getDepartment3() {
-        Department DEPARTMENT3 = new Department("cn3","name3");
-        DEPARTMENT3.setId(3L);
+        Companys companys = new Companys(1L, "name1", "trade1", "adress1", "nip1");
+
+        Department DEPARTMENT3 = new Department(1L, companys, "cn3", "name3");
         return DEPARTMENT3;
     }
 
     static Employee getEmployee1() {
 
-        Employee employee1 = new Employee( "name1","surname1");
+        Employee employee1 = new Employee("name1", "surname1");
 
         employee1.setId(1L);
         employee1.setDepartment(getDepartment1());
@@ -44,8 +45,7 @@ class DefaultDataTest {
 
     static Employee getEmployee2() {
 
-        Employee employee2 = new Employee( "name2","surname2");
-
+        Employee employee2 = new Employee("name2", "surname2");
         employee2.setId(2L);
         employee2.setDepartment(getDepartment2());
         employee2.setAgreementType(AgreementType.JOB_CONTRACT);
@@ -59,7 +59,7 @@ class DefaultDataTest {
 
     static Employee getEmployee3() {
 
-        Employee employee3 = new Employee( "name3","surname3");
+        Employee employee3 = new Employee("name3", "surname3");
 
         employee3.setId(3L);
         employee3.setDepartment(getDepartment1());

@@ -1,9 +1,13 @@
+DELETE FROM companys;
 DELETE FROM department;
 DELETE FROM employee;
 DELETE FROM users;
 
-INSERT INTO department (id, name, code_name) VALUES (1, "name1", "cn1");
-INSERT INTO department (id, name, code_name) VALUES (2, "name2", "cn2");
+INSERT INTO companys (id, name, trade, adress, nip) VALUES (1, "name1", "trade1", "adress1", "nip1");
+INSERT INTO companys (id, name, trade, adress, nip) VALUES (2, "name2", "trade2", "adress2", "nip2");
+
+INSERT INTO department (id, company_id, name, code_name) VALUES (1, 1, "name1", "cn1");
+INSERT INTO department (id, company_id, name, code_name) VALUES (2, 1, "name2", "cn2");
 
 INSERT INTO employee (id, department_id, name, surname, agreement_type, working_hours_percent, working_hours_hourly, salary, hire_date)
   VALUES (1, 1, "name1", "surname1", "JOB_CONTRACT", 100, 176, 1000, "2017-01-01");

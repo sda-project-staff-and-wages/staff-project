@@ -10,6 +10,7 @@ import java.time.LocalDate;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 @RequiredArgsConstructor
 @EqualsAndHashCode
+@ToString
 @Entity
 @Table(name = "employee")
 public class Employee {
@@ -23,10 +24,6 @@ public class Employee {
     @JoinColumn(name = "department_id")
     private Department department;
 
-    @Column(name = "company_id")
-    @NonNull
-    Long company_id;
-  
     @Column(name = "name")
     @NonNull
     private String name;
