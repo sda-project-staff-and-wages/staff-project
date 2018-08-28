@@ -18,7 +18,7 @@ public class Users {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "code_name")
+    @Column(name = "company_id")
     @NonNull
     @ManyToMany
     Long company_id;

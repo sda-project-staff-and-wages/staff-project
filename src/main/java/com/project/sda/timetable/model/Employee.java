@@ -23,10 +23,10 @@ public class Employee {
     @JoinColumn(name = "department_id")
     private Department department;
 
-    @Column(name = "code_name")
+    @Column(name = "company_id")
     @NonNull
     Long company_id;
-
+  
     @Column(name = "name")
     @NonNull
     private String name;

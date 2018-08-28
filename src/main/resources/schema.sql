@@ -13,6 +13,7 @@ CREATE TABLE department (
 	code_name varchar(5) NOT NULL,
 	PRIMARY KEY(id),
 	FOREIGN KEY(company_id) REFERENCES companys(id)
+	PRIMARY KEY(id)
 )ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 CREATE TABLE employee (
@@ -27,8 +28,8 @@ CREATE TABLE employee (
   salary decimal NOT NULL,
   hire_date date NOT NULL,
   PRIMARY KEY(id),
-  FOREIGN KEY(department_id) REFERENCES department(id),
   FOREIGN KEY(company_id) REFERENCES companys(id)
+  FOREIGN KEY(department_id) REFERENCES department(id)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 CREATE TABLE users(
