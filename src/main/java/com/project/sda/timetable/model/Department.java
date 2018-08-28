@@ -6,26 +6,28 @@ import javax.persistence.*;
 @Getter
 @Setter
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-@RequiredArgsConstructor
+@AllArgsConstructor
 @EqualsAndHashCode
 @Entity
+@ToString
 @Table(name = "department")
 public class Department {
 
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    private Long id;
 
-    @Column(name = "company_id")
+    @ManyToOne
+    @JoinColumn(name = "company_id")
     @NonNull
-    Long company_id;
+    private Companys companys;
 
     @Column(name = "code_name")
     @NonNull
-    String codeName;
+    private String codeName;
 
     @Column(name = "name")
     @NonNull
-    String name;
+    private String name;
 }

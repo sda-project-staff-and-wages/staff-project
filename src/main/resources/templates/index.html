@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>calendar demo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel='stylesheet' href='webjars/fullcalendar/3.5.1/dist/fullcalendar.css' />
+    <script src="webjars/jquery/2.0.3/jquery.min.js"></script>
+    <script src='webjars/moment/2.19.1/min/moment.min.js'></script>
+    <script src='webjars/fullcalendar/3.5.1/dist/fullcalendar.js'></script>
+    <script src='fullcalendar/locale-all.js'></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#calendar').fullCalendar({
+                locale: 'pl',
+                events: {
+                    url : '/api/event/all'
+                },
+                dayClick: function() {
+                    alert('a day has been clicked!');
+                }
+                // defaultView: 'agendaDay',
+                // events: [
+                //     // events go here
+                // ],
+                // resources: [
+                //     { id: 'a', title: 'Room A' },
+                //     { id: 'b', title: 'Room B' },
+                //     { id: 'c', title: 'Room C' },
+                //     { id: 'd', title: 'Room D' }
+                // ]
+            });
+        });
+    </script>
+</head>
+<body>
+
+<div id='calendar'></div>
+
+<div class="container">
+    <div class="hero-unit">
+        <h1>Test</h1>
+        <p>
+            Welcome to the Spring MVC application!
+        </p>
+        <p>
+            <a href="/" th:href="@{/employees}" class="btn btn-large btn-success">Employees</a>
+        </p>
+    </div>
+    <!--<div th:replace="fragments/footer :: footer">&copy; 2018 The SDA Project</div>-->
+</div>
+</body>
+</html>
