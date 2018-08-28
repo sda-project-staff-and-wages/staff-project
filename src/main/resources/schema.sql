@@ -3,6 +3,7 @@ drop table if exists department;
 drop table if exists employee;
 drop table if exists users;
 drop table if exists companys;
+drop table if exists working_hours;
 SET FOREIGN_KEY_CHECKS = 1;
 
 CREATE TABLE department (
@@ -45,4 +46,18 @@ CREATE TABLE companys(
   adress varchar(50) NOT NULL,
   nip varchar(20) NOT NULL,
   PRIMARY KEY(id)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+CREATE TABLE working_hours(
+  id bigint(20) NOT NULL AUTO_INCREMENT,
+  workday date NOT NULL,
+  employee_id bigint(20) NOT NULL,
+  start_hour int(2) NOT NULL,
+  start_minut int(2) DEFAULT 0,
+  end_hour int(2) NOT NULL,
+  end_minut int(2) DEFAULT 0,
+  work_time int(2),
+  absence_type varchar(50),
+  PRIMARY KEY(id),
+  FOREIGN KEY(employee_id) REFERENCES employee(id)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
